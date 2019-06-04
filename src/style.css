@@ -1,0 +1,23 @@
+#pantallaInicio{
+    text-align: center;
+
+}
+h1{
+    text-align: center;
+}
+
+#imgPortada{
+    width: 800px;
+    height: 400px;
+    border: 1px solid black;
+    padding: 10px;
+}
+
+#imgPantallaCifrado{
+    width: 300px;
+        
+}
+ body {
+     background-color: orange;
+     
+ }

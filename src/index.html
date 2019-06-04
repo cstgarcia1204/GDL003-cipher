@@ -2,13 +2,145 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Caesar Cipher</title>
+    <title>Estacionauto Cipher</title>
     <link rel="stylesheet" href="style.css" />
   </head>
+
+
   <body>
-    <div id="root">
-      <h1>Hola mundo!</h1>
+    <!--Aqui el encabezado de la página-->
+    <header id="header">
+      <h1>°E S T A C I O N A U T O________C I P H E R°</h1>
+    </header>
+
+    <!--Aqui inicia la pantallaHome-->
+    <section id="pantallaInicio">
+      <div id="root">
+        <!--Imagen de la página principal-->
+        <img id="imgPortada" 
+        src="https://cdn.pixabay.com/photo/2017/06/04/20/15/seat-2372102_960_720.jpg" 
+        alt="estacionAuto">
+      </div>
+
+      <!--Mostrando los botones de opciones-->
+      <div>
+        <br>
+        Elige una opcion:
+        <br>
+        <button id="seccionIngresarData" onclick="irAingresar()" >Ingresar Registro de Auto</button>
+        <button id="seccionDescifrarData" onclick="irAdescifrar()">Descifrar Registro</button>     
+      </div>
+      <br><br>
+
+
+      <!--*********************Seccion de prueba para el cifrado-->
+      <div id="calis">
+        <button id="botonDeMentis" onclick="conociendoNumeroAscii()">boton de calis</button>
+        <br><br>
+
+
+      </div>
+      <!--***************Se acaba seccion de prueba-->
+    </section>
+
+
+
+
+    <!--Aqui la pantalla 2: cuando se seleccionó el boton ingresar datos-->
+    <div id="pantallaIngresar">
+      <br>
+      Ingrese los datos correspondientes
+      <br>
+      Hora de ingreso (formato am/pm): 
+      <input id="cajaHora"  type="text" name="textHora" onkeyup="guardarHora()">
+      <br>
+      Placas:
+      <input id="cajaPlacas" type="text" name="textPlacas" onkeyup="guardarPlacas()">
+      <br>
+      Color de auto:
+      <input id="cajaColor" type="text" name="textColor" onkeyup="guardarColor()">
+      <br><br>
+      Asegurese de haber ingresado los datos correctamente, confirme:
+      <br>
+      <div id="valorPagHora"></div>
+      <br>
+      <div id="valorPagPlacas"></div>
+      <br>
+      <div id="valorPagColor"></div>
+      <br><br>
+      <div>
+        <button id="cifrar" onclick="cifrar()">Cifrar</button>
+        <button id="regresarHome" onclick="regresarHome()">Regresar a Inicio</button>
+      </div>
     </div>
+    
+    
+    <!--Aqui la pantalla 3: cuando se seleccionó el boton de cifrar-->
+    <div id="pantallaCifrar">
+      <img id="imgPantallaCifrado" 
+      src="https://cdn.pixabay.com/photo/2012/04/24/11/38/traffic-39507_960_720.png" alt="img2">
+      <br>
+           
+
+      <div id="mensajePagCifrado">
+        <br><br>
+        
+
+      </div>
+      <br><br>
+
+      <!----------------------------Nueva SECCION DE PRUEBA------------------------------------------->
+      <div id="calis2">
+        <br><br>
+        <button id="botonDeMentis2" onclick="codificandoCalis()">boton experimento</button>
+        <br><br>
+        <br><br>
+      </div>
+      <!------------------------------TERMINA SECCION DE PRUEBA--------------------->
+      <button id="regresarHome2" onclick="regresarHome()">Regresar a Inicio</button>
+
+    </div>
+
+
+
+    <!--Aqui la pantalla 4: cuando se seleccionó el botón descifrar datos-->
+    <div id="pantallaIngresarMsg" >
+      <br>
+      Ingresar mensaje:
+      <br>
+      <input id="cajaMsgDescifrado" type="text" name="textMsg" onkeyup="guardarMsg()">
+      <br><br>
+      Asegurese de haber ingresado el mensaje correctamente, confirme:
+      <br>
+      <div id="valorPagMsg"></div>
+      <br><br>
+      <button id="descifrar" onclick="descifrar()">Descifrar</button>
+      <!--aqui deberia de ir el mensaje cifrado-->
+      <button id="regresarHome3" onclick="regresarHome()">Regresar a Inicio</button>
+    </div>
+
+
+    <!--Aqui pantalla 5 cuando se seleccionó el boton de descifrar-->
+    <div id="pantallaDescifrar">
+        <img id="imgPantallaDescifrado" 
+        src="https://cdn.pixabay.com/photo/2010/11/28/pay-here-241__340.jpg" alt="img3">
+        <br>
+               
+        <div id="mensajePagDescifrado">
+          <br><br>
+        </div>
+        <br><br>
+        
+        <button id="regresarHome4" onclick="regresarHome()">Regresar a Inicio</button>
+  
+    </div>
+
+
+
+
+
+
+
     <script src="cipher.js"></script>
     <script src="index.js"></script>
   </body>
