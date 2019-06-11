@@ -44,7 +44,7 @@ window.cipher = {
       //condicional para que reconozca si el caracter que recorre es un número en Ascii
       if(string.charCodeAt(i) > 47 && string.charCodeAt(i) < 58){
 
-          let palabraAscii=(string.charCodeAt(i)+48-offset)%10+48;
+          let palabraAscii=(string.charCodeAt(i)-48-offset)%10+48;
           let nuevaLetra =String.fromCharCode(palabraAscii);
           cadenaDescifrada+= nuevaLetra;
       }else{
