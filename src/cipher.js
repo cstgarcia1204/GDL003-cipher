@@ -43,8 +43,10 @@ window.cipher = {
      
       //condicional para que reconozca si el caracter que recorre es un número en Ascii
       if(string.charCodeAt(i) > 47 && string.charCodeAt(i) < 58){
-
-          let palabraAscii=(string.charCodeAt(i)-48-offset)%10+48;
+          let palabraAscii=string.charCodeAt(i)-(offset%10);
+          if (palabraAscii< 48){
+            palabraAscii=string.charCodeAt(i)+(10-(offset%10));
+          }
           let nuevaLetra =String.fromCharCode(palabraAscii);
           cadenaDescifrada+= nuevaLetra;
       }else{
@@ -53,7 +55,7 @@ window.cipher = {
           cadenaDescifrada+=' ';
         }else{
           //condicional para que aplique la formula para letras del abecedario
-          let palabraAscii=(string.charCodeAt(i)-65-offset)%26+65;
+          let palabraAscii=(string.charCodeAt(i)+65-offset)%26+65;
           let nuevaLetra =String.fromCharCode(palabraAscii);
           cadenaDescifrada+= nuevaLetra;
         }
