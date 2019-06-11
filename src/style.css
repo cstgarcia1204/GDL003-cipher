@@ -1,9 +1,15 @@
 #pantallaInicio{
     text-align: center;
+    
+
 
 }
 h1{
     text-align: center;
+    color: #000000;
+    background: #FFFFFF;
+    text-shadow: 2px 2px 0 #bcbcbc, 4px 4px 0 #9c9c9c;
+
 }
 
 #imgPortada{
@@ -18,6 +24,12 @@ h1{
         
 }
  body {
-     background-color: orange;
-     
+    color: white;
+    
+    font-family: Tahoma, Geneva, sans-serif;
+    text-align: center;
+    background-color: #000000;
+    /*background-image: url('https://s2.best-wallpaper.net/wallpaper/1920x1200/1711/City-night-roads-buildings-traffic-lights_1920x1200.jpg');*/
+
  }
+

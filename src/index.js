@@ -1,85 +1,126 @@
 //Ocultando contenido de la página para mostrar inicio
-document.getElementById("pantallaIngresar").style.display="none";
-document.getElementById("pantallaDescifrar").style.display="none";
-document.getElementById("pantallaCifrar").style.display="none";
-document.getElementById("pantallaIngresarMsg").style.display="none";
+document.getElementById('pantallaIngresar').style.display='none';
+document.getElementById('pantallaDescifrar').style.display='none';
+document.getElementById('pantallaCifrar').style.display='none';
+document.getElementById('pantallaIngresarMsg').style.display='none';
 
-//funcion boton ingresar resgistro de auto
+//seccion ingresar datos de registro 
+//nueva seccion  +++++
+document.getElementById('botonIngresarData').addEventListener('click',irAingresarBtn);
 
-function irAingresar(){
-    document.getElementById("pantallaIngresar").style.display="block";
-    document.getElementById("pantallaInicio").style.display="none";
-    document.getElementById("pantallaDescifrar").style.display="none";
-    document.getElementById("pantallaIngresarMsg").style.display="none";
+function irAingresarBtn(){
+    document.getElementById('pantallaIngresar').style.display='block';
+    document.getElementById('pantallaInicio').style.display='none';
+    document.getElementById('pantallaDescifrar').style.display='none';
+    document.getElementById('pantallaIngresarMsg').style.display='none';
 }
-//Validar enter falta investigar
-//function validarEnter(){
-        //if(event.wich== 13){
-            //guardarHora();
-        //} 
-//}
 
-//funcion para guardar dato de input cajaHora
+
+//funcion para guardar hora ingresada
+document.getElementById('cajaHora').addEventListener('click',guardarHora);
+document.getElementById('cajaMinuto').addEventListener('click',guardarHora);
 function guardarHora(){
-    
-    let hora= document.getElementById("cajaHora").value;
-    document.getElementById("valorPagHora").innerHTML= " "+hora;
+    let cajaHora=document.getElementById('cajaHora').value;
+    let cajaMinuto=document.getElementById('cajaMinuto').value;
+    document.getElementById('valorPagHora').innerHTML= cajaHora+':'+cajaMinuto+' horas';    
 }
-//funcion para guardar dato de input cajaPlacas
+
+//funcion para guardar placas
+document.getElementById('cajaPlacas').addEventListener('keyup',guardarPlacas);
 function guardarPlacas(){
+    let palabraIngresada= document.getElementById('cajaPlacas').value.toUpperCase();
+    document.getElementById('valorPagPlacas').innerHTML='Placas: '+palabraIngresada;
     
-    let placas= document.getElementById("cajaPlacas").value;
-    document.getElementById("valorPagPlacas").innerHTML= " "+placas;
 }
-//funcion para guardar dato de input cajaColor
+//funcion para guardar color
+document.getElementById('cajaColor').addEventListener('keyup',guardarColor);
 function guardarColor(){
-    let color= document.getElementById("cajaColor").value;
-    document.getElementById("valorPagColor").innerHTML=" "+color;
+    let palabraIngresada= document.getElementById('cajaColor').value.toUpperCase();
+    document.getElementById("valorPagColor").innerHTML='Color: '+palabraIngresada;
+    
+}
+
+//Imprimir el desplazamiento seleccionado
+document.getElementById('offsetInput').addEventListener('click',guardarOffset);
+
+function guardarOffset(){
+    const miDesplazamiento=parseInt(document.getElementById('offsetInput').value);
+    document.getElementById('valorPagDesplazamiento').innerHTML= miDesplazamiento;
+    console.log(miDesplazamiento);
 }
 
 //funcion para cifrar los datos ingresados
-function cifrar(){   
-    document.getElementById("header").style.display="block";
-    document.getElementById("pantallaCifrar").style.display="block";
-    document.getElementById("pantallaIngresar").style.display="none";
-    document.getElementById("pantallaInicio").style.display="none";
-    document.getElementById("pantallaDescifrar").style.display="none";
-    document.getElementById("pantallaIngresarMsg").style.display="none";
+document.getElementById('cifrar').addEventListener('click',irCifrar);
+function irCifrar(){   
+    document.getElementById('header').style.display='block';
+    document.getElementById('pantallaCifrar').style.display='block';
+    document.getElementById('pantallaIngresar').style.display='none';
+    document.getElementById('pantallaInicio').style.display='none';
+    document.getElementById('pantallaDescifrar').style.display='none';
+    document.getElementById('pantallaIngresarMsg').style.display='none';
 
-    document.getElementById("mensajePagCifrado").innerHTML=
-    "El mensaje CIFRADO es: "+"<br>"+cajaHora.value+"<br>"+cajaPlacas.value+"<br>"+cajaColor.value;
+    let hora=document.getElementById('cajaHora').value;
+    let minuto=document.getElementById('cajaMinuto').value;
+    let placas=document.getElementById('cajaPlacas').value.toUpperCase();
+    let color= document.getElementById('cajaColor').value.toUpperCase();
+    let palabraIngresada=hora+minuto+placas+color;
+    console.log(palabraIngresada);
+    const miOffset=parseInt(document.getElementById('offsetInput').value);
+    console.log(miOffset);
+
+    document.getElementById('mensajePagCifrado').innerHTML=
+    'El mensaje CIFRADO es: '+'<br>'+ window.cipher.encode(palabraIngresada,miOffset)+ 
+    '<br>'+'La clave es: '+miOffset;
 }
+
 
 //funcion para volver a Inicio
+document.getElementById('regresarHome').addEventListener('click',regresarHome);
+document.getElementById('regresarHome2').addEventListener('click',regresarHome);
+document.getElementById('regresarHome3').addEventListener('click',regresarHome);
+document.getElementById('regresarHome4').addEventListener('click',regresarHome);
+
 function regresarHome(){
-    document.getElementById("header").style.display="block";
-    document.getElementById("pantallaInicio").style.display="block";
-    document.getElementById("pantallaIngresar").style.display="none";
-    document.getElementById("pantallaDescifrar").style.display="none";
-    document.getElementById("pantallaCifrar").style.display="none";
-    document.getElementById("pantallaIngresarMsg").style.display="none";
+    document.getElementById('header').style.display='block';
+    document.getElementById('pantallaInicio').style.display='block';
+    document.getElementById('pantallaIngresar').style.display='none';
+    document.getElementById('pantallaDescifrar').style.display='none';
+    document.getElementById('pantallaCifrar').style.display='none';
+    document.getElementById('pantallaIngresarMsg').style.display='none';
 }
 
-//funcion boton ir a ingresar mensaje a descifrar
+//boton ir a ingresar mensaje a descifrar
+//nueva seccion +++++++++++++++++++++++++
+document.getElementById('botonDescifrarData').addEventListener('click',irAdescifrarBtn);
 
-function irAdescifrar(){
-    document.getElementById("header").style.display="block";
-    document.getElementById("pantallaIngresarMsg").style.display="block";
-    document.getElementById("pantallaInicio").style.display="none";
-    document.getElementById("pantallaIngresar").style.display="none";
-    document.getElementById("pantallaCifrar").style.display="none";
-    document.getElementById("pantallaDescifrar").style.display="none";
+function irAdescifrarBtn(){
+    document.getElementById('header').style.display='block';
+    document.getElementById('pantallaIngresarMsg').style.display='block';
+    document.getElementById('pantallaInicio').style.display='none';
+    document.getElementById('pantallaIngresar').style.display='none';
+    document.getElementById('pantallaCifrar').style.display='none';
+    document.getElementById('pantallaDescifrar').style.display='none';
 }
 
 //funcion guardar el mensaje que se ingresó
+document.getElementById('cajaMsgDescifrado').addEventListener('keyup',guardarMsg);
 function guardarMsg(){
-    let mensajeIngresado= document.getElementById("cajaMsgDescifrado").value;
-    document.getElementById("valorPagMsg").innerHTML= " "+mensajeIngresado;
+    let mensajeIngresado= document.getElementById('cajaMsgDescifrado').value;
+    document.getElementById('valorPagMsg').innerHTML='El código ingresado es: '+mensajeIngresado;
+}
+//funcion guardar clave desplazamiento
+document.getElementById('offsetDecode').addEventListener('click',guardarClave);
+function guardarClave(){
+    const miDesplazamientoDecode=parseInt(document.getElementById('offsetDecode').value);
+    document.getElementById('valorPagDesplazamientoDecode').innerHTML='La clave ingresada es: '
+    + miDesplazamientoDecode;
+    console.log(miDesplazamientoDecode);
+
 }
 
-
 //funcion para decodificar el mensaje que se ingresó
-function descifrar(){
+document.getElementById('descifrar').addEventListener('click',irDescifrar);
+function irDescifrar(){
     document.getElementById("header").style.display="block";
     document.getElementById("pantallaDescifrar").style.display="block";
     document.getElementById("pantallaIngresar").style.display="none";
@@ -87,97 +128,14 @@ function descifrar(){
     document.getElementById("pantallaCifrar").style.display="none";
     document.getElementById("pantallaIngresarMsg").style.display="none";
 
+    let mensajeDecode= document.getElementById('cajaMsgDescifrado').value.toUpperCase();
+    console.log(mensajeDecode);
+    const miOffsetDecode=parseInt(document.getElementById('offsetDecode').value);
+    console.log(miOffsetDecode);
+
 
     document.getElementById("mensajePagDescifrado").innerHTML=
-    "El mensaje DESCIFRADO es: "+"<br>"+cajaMsgDescifrado.value;
+    'El mensaje DESCIFRADO es: '+'<br>'+ window.cipher.decode(mensajeDecode,miOffsetDecode)+ 
+    '<br>'+'La clave es: '+miOffsetDecode;
+   
 }
-
-//------------------------------AQUI INICIA  LA PARTE DEL CIFRADO---------------
-
-/*
-//haciendo la funcion de obtener la conversion de mi Abcdario segun la posicion de letra en mi abcdario al valor en Ascii
-function conociendoNumeroAscii(){
-    //ascci inicia A=65 ... Z=90
-    let miAbcdario= "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    let nRecorrer=4;    
-    //obteniendo el valor ascii de la letra con posicion "x" en nuestro alfabeto
-    let calisDeBusqueda=miAbcdario.charCodeAt(9);
-
-    //obteniendo el nuevo valor ascii cifrado en cesar, recorriendo "n" posiciones en nuestro alfabeto
-    let elNuevoValor=(calisDeBusqueda-65+nRecorrer)%26+65;
-    let letraenCesar= String.fromCharCode(elNuevoValor);
-
-
-    //imprimiendo el numero que corresponde en ascii y la nueva letra con el cifrado
-    document.getElementById("calis").innerHTML=
-    "El valor en ascii es: "+calisDeBusqueda+"<br>"+"El valor Cifrado Cesar es: "+letraenCesar;
-    
-}
-*/
-//tratando de agregar la version no solo de una letra sino de un string
-//haciendo la funcion de obtener la conversion de mi Abcdario segun la posicion de letra en mi abcdario al valor en Ascii
-function codificandoCalis(){
-    //invocar valor color
-    let color1= document.getElementById("cajaColor").value;
-    //ascci inicia A=65 ... Z=90
-    let misAbcs= ["A","B","C","D","E","F","G","H","I","J","K","L","M","N",
-    "O","P","Q","R","S","T","U","V","W","X","Y","Z"];
-    //llave
-    let nRecorrer=4;
-
-    //convertir el dato que se introdujo a un array de letras blanco= [b l a n c o]
-    let colorLetra= color1.toUpperCase().split("");
-    console.log(colorLetra);
-
-    //recorrer el array
-    for (let i=0; i<misAbcs.length;i++){
-        let impresionIndiceColor =(misAbcs[i]);
-        console.log(impresionIndiceColor+" hola");
-        document.getElementById("calis2").innerHTML=impresionIndiceColor+" hola"+"<br>";
-
-     
-        
-        for (let j=0; i<colorLetra.length;j++){
-            let impresionIndiceColor =(colorLetra[j]);
-            console.log(impresionIndiceColor+" adios");
-            document.getElementById("calis2").innerHTML=impresionIndiceColor+" adios"+"<br>";
-    
-            // comparar array deletras con abecedario propio y haciendo conversion en cifrado cesar    
-            if(misAbcs[i]== colorLetra[j]){
-                let recolectandoValor;
-        
-            //obteniendo el valor ascii de la letra con posicion "x" en nuestro alfabeto
-            let calisDeBusquedaColor=misAbcs.charCodeAt(recolectandoValor);
-            let elNuevoValorColor=(calisDeBusquedaColor-65+nRecorrer)%26+65;
-            let letraEnCesarColor= String.fromCharCode(elNuevoValorColor);
-            //imprimiendo el numero que corresponde en ascii y la nueva letra con el cifrado 
-            console.log(letraEnCesarColor);
-            document.getElementById("calis2").innerHTML=impresionIndiceColor+" queonda";
-            }
-        }
-    }
-        
-    
-
-    
-}
-
-//CHECAR LA FUNCION JOING QUE ES PARA PEGAR UN ARREGLO Y ESO LO GUARDARIA EN UNA VARIABLE
-
-/* Idea de Funcion en numero
-//let nRecorrelo=parseInt(hora)*3*2;    
-    //obteniendo el valor ascii de la letra con posicion "x" en nuestro alfabeto
-    //let encuentrame=misAbcs.charCodeAt(0);
-
-    //obteniendo el nuevo valor ascii cifrado en cesar, recorriendo "n" posiciones en nuestro alfabeto
-    //let niuValue=(encuentrame-65+nRecorrelo)%26+65;
-    //let letraCes= String.fromCharCode(niuValue);
-
-    //imprimiendo el numero que corresponde en ascii y la nueva letra con el cifrado
-    //document.getElementById("segundoCalis").innerHTML=
-    //"El valor en ascii es: "+encuentrame+"<br>"+"El valor Cifrado Cesar es: "+letraCes;
-    
-    //encontrar la longitud de la cadena
-    //let longituddeCadena=hora.length;
-    //es el numero de veces que vas a pasar por el proceso de comparar 
-*/
