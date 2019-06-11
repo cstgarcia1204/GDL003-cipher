@@ -2,7 +2,7 @@ window.cipher = {
 
   // ...
   
-  encode: (string,offset) => {
+  encode: (offset,string) => {
     console.log(string);
     let cifraCesar='';
 
@@ -34,7 +34,7 @@ window.cipher = {
 
 
   //inicia la funcion Descifrar
-  decode: (string,offset) =>{
+  decode: (offset,string) =>{
     console.log(string);
     let cadenaDescifrada='';
 

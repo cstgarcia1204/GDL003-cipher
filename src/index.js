@@ -6,52 +6,51 @@ document.getElementById('pantallaIngresarMsg').style.display='none';
 
 //seccion ingresar datos de registro 
 //nueva seccion  +++++
-document.getElementById('botonIngresarData').addEventListener('click',irAingresarBtn);
-
-function irAingresarBtn(){
+const irAingresarBtn=()=>{
     document.getElementById('pantallaIngresar').style.display='block';
     document.getElementById('pantallaInicio').style.display='none';
     document.getElementById('pantallaDescifrar').style.display='none';
     document.getElementById('pantallaIngresarMsg').style.display='none';
 }
+document.getElementById('botonIngresarData').addEventListener('click',irAingresarBtn);
+
 
 
 //funcion para guardar hora ingresada
-document.getElementById('cajaHora').addEventListener('click',guardarHora);
-document.getElementById('cajaMinuto').addEventListener('click',guardarHora);
-function guardarHora(){
+const guardarHora=()=>{
     let cajaHora=document.getElementById('cajaHora').value;
     let cajaMinuto=document.getElementById('cajaMinuto').value;
     document.getElementById('valorPagHora').innerHTML= cajaHora+':'+cajaMinuto+' horas';    
 }
+document.getElementById('cajaHora').addEventListener('click',guardarHora);
+document.getElementById('cajaMinuto').addEventListener('click',guardarHora);
 
 //funcion para guardar placas
-document.getElementById('cajaPlacas').addEventListener('keyup',guardarPlacas);
-function guardarPlacas(){
+const guardarPlacas= ()=>{
     let palabraIngresada= document.getElementById('cajaPlacas').value.toUpperCase();
-    document.getElementById('valorPagPlacas').innerHTML='Placas: '+palabraIngresada;
-    
+    document.getElementById('valorPagPlacas').innerHTML='Placas: '+palabraIngresada;    
 }
+document.getElementById('cajaPlacas').addEventListener('keyup',guardarPlacas);
+
+
 //funcion para guardar color
-document.getElementById('cajaColor').addEventListener('keyup',guardarColor);
-function guardarColor(){
+const guardarColor= ()=>{
     let palabraIngresada= document.getElementById('cajaColor').value.toUpperCase();
     document.getElementById("valorPagColor").innerHTML='Color: '+palabraIngresada;
-    
 }
+document.getElementById('cajaColor').addEventListener('keyup',guardarColor);
 
 //Imprimir el desplazamiento seleccionado
-document.getElementById('offsetInput').addEventListener('click',guardarOffset);
-
-function guardarOffset(){
+const guardarOffset= ()=>{
     const miDesplazamiento=parseInt(document.getElementById('offsetInput').value);
     document.getElementById('valorPagDesplazamiento').innerHTML= miDesplazamiento;
     console.log(miDesplazamiento);
 }
+document.getElementById('offsetInput').addEventListener('click',guardarOffset);
+document.getElementById('offsetInput').addEventListener('click',guardarOffset);
 
 //funcion para cifrar los datos ingresados
-document.getElementById('cifrar').addEventListener('click',irCifrar);
-function irCifrar(){   
+const irCifrar= () =>{   
     document.getElementById('header').style.display='block';
     document.getElementById('pantallaCifrar').style.display='block';
     document.getElementById('pantallaIngresar').style.display='none';
@@ -69,18 +68,14 @@ function irCifrar(){
     console.log(miOffset);
 
     document.getElementById('mensajePagCifrado').innerHTML=
-    'El mensaje CIFRADO es: '+'<br>'+ window.cipher.encode(palabraIngresada,miOffset)+ 
+    'El mensaje CIFRADO es: '+'<br>'+ window.cipher.encode(miOffset,palabraIngresada)+ 
     '<br>'+'La clave es: '+miOffset;
 }
+document.getElementById('cifrar').addEventListener('click',irCifrar);
 
 
 //funcion para volver a Inicio
-document.getElementById('regresarHome').addEventListener('click',regresarHome);
-document.getElementById('regresarHome2').addEventListener('click',regresarHome);
-document.getElementById('regresarHome3').addEventListener('click',regresarHome);
-document.getElementById('regresarHome4').addEventListener('click',regresarHome);
-
-function regresarHome(){
+const regresarHome= ()=>{
     document.getElementById('header').style.display='block';
     document.getElementById('pantallaInicio').style.display='block';
     document.getElementById('pantallaIngresar').style.display='none';
@@ -88,12 +83,14 @@ function regresarHome(){
     document.getElementById('pantallaCifrar').style.display='none';
     document.getElementById('pantallaIngresarMsg').style.display='none';
 }
+document.getElementById('regresarHome').addEventListener('click',regresarHome);
+document.getElementById('regresarHome2').addEventListener('click',regresarHome);
+document.getElementById('regresarHome3').addEventListener('click',regresarHome);
+document.getElementById('regresarHome4').addEventListener('click',regresarHome);
 
 //boton ir a ingresar mensaje a descifrar
 //nueva seccion +++++++++++++++++++++++++
-document.getElementById('botonDescifrarData').addEventListener('click',irAdescifrarBtn);
-
-function irAdescifrarBtn(){
+const irAdescifrarBtn= ()=>{
     document.getElementById('header').style.display='block';
     document.getElementById('pantallaIngresarMsg').style.display='block';
     document.getElementById('pantallaInicio').style.display='none';
@@ -101,26 +98,25 @@ function irAdescifrarBtn(){
     document.getElementById('pantallaCifrar').style.display='none';
     document.getElementById('pantallaDescifrar').style.display='none';
 }
+document.getElementById('botonDescifrarData').addEventListener('click',irAdescifrarBtn);
 
 //funcion guardar el mensaje que se ingresó
-document.getElementById('cajaMsgDescifrado').addEventListener('keyup',guardarMsg);
-function guardarMsg(){
+const guardarMsg= ()=>{
     let mensajeIngresado= document.getElementById('cajaMsgDescifrado').value;
     document.getElementById('valorPagMsg').innerHTML='El código ingresado es: '+mensajeIngresado;
 }
+document.getElementById('cajaMsgDescifrado').addEventListener('keyup',guardarMsg);
 //funcion guardar clave desplazamiento
-document.getElementById('offsetDecode').addEventListener('click',guardarClave);
-function guardarClave(){
+const guardarClave= ()=>{
     const miDesplazamientoDecode=parseInt(document.getElementById('offsetDecode').value);
     document.getElementById('valorPagDesplazamientoDecode').innerHTML='La clave ingresada es: '
     + miDesplazamientoDecode;
     console.log(miDesplazamientoDecode);
-
 }
-
+document.getElementById('offsetDecode').addEventListener('click',guardarClave);
+document.getElementById('offsetDecode').addEventListener('keyup',guardarClave);
 //funcion para decodificar el mensaje que se ingresó
-document.getElementById('descifrar').addEventListener('click',irDescifrar);
-function irDescifrar(){
+const irDescifrar= ()=>{
     document.getElementById("header").style.display="block";
     document.getElementById("pantallaDescifrar").style.display="block";
     document.getElementById("pantallaIngresar").style.display="none";
@@ -135,7 +131,8 @@ function irDescifrar(){
 
 
     document.getElementById("mensajePagDescifrado").innerHTML=
-    'El mensaje DESCIFRADO es: '+'<br>'+ window.cipher.decode(mensajeDecode,miOffsetDecode)+ 
+    'El mensaje DESCIFRADO es: '+'<br>'+ window.cipher.decode(miOffsetDecode,mensajeDecode)+ 
     '<br>'+'La clave es: '+miOffsetDecode;
    
 }
+document.getElementById('descifrar').addEventListener('click',irDescifrar);
