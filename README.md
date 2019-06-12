@@ -1,5 +1,4 @@
-# EstaciónAuto Cipher
-Introducción:
+# EstacionAuto Cipher
 
 	¡¡¡Bienvenid@ a EstacionAuto Cipher!!!
 
@@ -7,12 +6,10 @@ La aplicación está basada en el cifrado César, el cual es un tipo de cifrado 
 
 La aplicación funciona ingresando los siguientes datos: 
 
-La hora que ingresó el automóvil al estacionamiento, 
+  * La hora que ingresó el automóvil al estacionamiento, 
 
-la matricula de las placas y, 
-
-
-el color del auto.
+  * la matricula de las placas, 
+  * y el color del auto.
 
 
 Estos datos serán cifrados dependiendo el número de desplazamientos que selecciones.
