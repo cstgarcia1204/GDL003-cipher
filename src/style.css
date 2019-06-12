@@ -134,8 +134,7 @@ h1{
     position: absolute;
     left: 300px;
 }
-#regresarHome, #regresarHome2, 
-#regresarHome3, #regresarHome4{
+#regresarHome, #regresarHome2{
     background-color: #FF8000;
     border: none;
     color: white;
@@ -162,8 +161,8 @@ h1{
     color: #DF0101;
 }
 
-#pantallaDescifrar{
-    column-count:2;
+#pantallaDescifrar{ 
+    text-align: center;
 
 }
 #mensajePagDescifrado{
@@ -182,4 +181,38 @@ h1{
     font-size: 15px;
     position: absolute;
     left: 300px;
+    bottom: 80px;
+}
+#regresarHome3{
+    background-color: #FF8000;
+    border: none;
+    color: white;
+    font-weight: bold;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display:block;
+    font-size: 15px;
+    position: absolute;
+    right: 100px;
+    top: 500px;
+}
+
+#imgIrDescifrar{
+        width: 400px;
+}
+#regresarHome4{
+    background-color: #FF8000;
+    border: none;
+    color: white;
+    font-weight: bold;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display:block;
+    font-size: 15px;
+    position: absolute;
+    left: 500px;
+    top: 500px;
+
 }
