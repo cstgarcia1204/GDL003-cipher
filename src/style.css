@@ -5,31 +5,181 @@
 
 }
 h1{
-    text-align: center;
-    color: #000000;
-    background: #FFFFFF;
-    text-shadow: 2px 2px 0 #bcbcbc, 4px 4px 0 #9c9c9c;
+    font: 700 4em/1 "Oswald", sans-serif;
+    letter-spacing: 0;
+    padding: .25em 0 .325em;
+    display: block;
+    margin: 0 auto;
+    text-shadow: 0 0 80px rgba(255,255,255,.5);
+    /* Clip Background Image */
 
+	  background: url(http://f.cl.ly/items/010q3E1u3p2Q0j1L1S1o/animated_text_fill.png) repeat-y;
+	  -webkit-background-clip: text;
+	  background-clip: text;
+
+/* Animate Background Image */
+
+	  -webkit-text-fill-color: transparent;
+	  animation: aitf 80s linear infinite;
+
+/* Activate hardware acceleration for smoother animations */
+
+	  transform: translate3d(0,0,0);
+	  backface-visibility: hidden;
+}
+#header{
+    letter-spacing: .5em;
+	display: inline-block;
+    padding: 1em 0em;
+    
+	
 }
 
-#imgPortada{
-    width: 800px;
-    height: 400px;
-    border: 1px solid black;
-    padding: 10px;
-}
 
 #imgPantallaCifrado{
     width: 300px;
         
 }
+
  body {
     color: white;
-    
+    font-weight: bold;
+    font-size: 20px;
     font-family: Tahoma, Geneva, sans-serif;
     text-align: center;
     background-color: #000000;
-    /*background-image: url('https://s2.best-wallpaper.net/wallpaper/1920x1200/1711/City-night-roads-buildings-traffic-lights_1920x1200.jpg');*/
+    background-image: url('https://www.securitymagazine.com/ext/resources/SEC/2016/0216/SEC0216-parking-feature-slide5_900px.jpg');
+    background-repeat:no-repeat;
+    margin-top: 0px;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 
  }
+ #elige{
+     text-align: center;
+     font-size: 30px;
+     display:inline-block;
+     background: #FF8000;
+ }
 
+ #botonIngresarData{
+    background-color: #FF8000;
+    border: none;
+    color: white;
+    font-weight: bold;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display:block;
+    font-size: 16px;
+    position: absolute;
+    top: 400px;
+    left: 300px;
+    
+
+ }
+ #botonDescifrarData{
+    background-color: #FF8000;
+    border: none;
+    color: white;
+    font-weight: bold;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display:block;
+    font-size: 16px;
+    position: absolute;
+    top: 400px;
+	right: 300px;
+ }
+
+#datosAuto{
+    text-align: center;
+    background: #FF8000;
+    display: block;
+}
+#cajitasDatos{
+    column-count:3;
+    font-size: 20px;
+    text-align: left;
+}
+#cajaHora, #cajaMinuto{
+    width: 120px;
+    font-size: 14px;
+    padding: 12px;
+}
+#cajaPlacas, #cajaColor{
+    transform:scale(1);
+    font-size: 14px;
+    padding: 25px;
+}
+
+
+#confirmarDatos{
+    color: #DF0101;
+}
+
+#cifrar{
+    background-color: #FF8000;
+    border: none;
+    color: white;
+    font-weight: bold;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display:block;
+    font-size: 15px;
+    position: absolute;
+    left: 300px;
+}
+#regresarHome, #regresarHome2, 
+#regresarHome3, #regresarHome4{
+    background-color: #FF8000;
+    border: none;
+    color: white;
+    font-weight: bold;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display:block;
+    font-size: 15px;
+    position: absolute;
+    right: 300px;
+}
+#pantallaCifrar{
+    column-count:2;
+}
+#mensajePagCifrado{
+    color: #DF0101;
+}
+
+#pantallaIngresarMsg{
+    column-count:2;
+}
+#confirmarMsg{
+    color: #DF0101;
+}
+
+#pantallaDescifrar{
+    column-count:2;
+
+}
+#mensajePagDescifrado{
+    color: #DF0101;
+
+}
+#descifrar{
+    background-color: #FF8000;
+    border: none;
+    color: white;
+    font-weight: bold;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display:block;
+    font-size: 15px;
+    position: absolute;
+    left: 300px;
+}

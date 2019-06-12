@@ -4,8 +4,7 @@ document.getElementById('pantallaDescifrar').style.display='none';
 document.getElementById('pantallaCifrar').style.display='none';
 document.getElementById('pantallaIngresarMsg').style.display='none';
 
-//seccion ingresar datos de registro 
-//nueva seccion  +++++
+//seccion ingresar datos de registro
 const irAingresarBtn=()=>{
     document.getElementById('pantallaIngresar').style.display='block';
     document.getElementById('pantallaInicio').style.display='none';
@@ -89,7 +88,6 @@ document.getElementById('regresarHome3').addEventListener('click',regresarHome);
 document.getElementById('regresarHome4').addEventListener('click',regresarHome);
 
 //boton ir a ingresar mensaje a descifrar
-//nueva seccion +++++++++++++++++++++++++
 const irAdescifrarBtn= ()=>{
     document.getElementById('header').style.display='block';
     document.getElementById('pantallaIngresarMsg').style.display='block';

@@ -11,7 +11,7 @@ window.cipher = {
       if(string.charCodeAt(i) > 31 && string.charCodeAt(i) < 48 
         || string.charCodeAt(i)>57 && string.charCodeAt(i) <65
         || string.charCodeAt(i)>90 && string.charCodeAt(i) <97
-        || string.charCodeAt(i)>122 && string.charCodeAt(i) <=255){
+        || string.charCodeAt(i)>122 && string.charCodeAt(i) <=255){// ascii extendido
         let palabraAscii=string.charCodeAt(i);
         let nuevaLetra =String.fromCharCode(palabraAscii);
         cifraCesar+= nuevaLetra;
@@ -47,7 +47,7 @@ window.cipher = {
 
   //inicia la funcion Descifrar
   decode: (offset,string) =>{
-    console.log(string);
+    console.log('La palabra ingresada fue'+string);
     let cadenaDescifrada='';
 
   
@@ -80,7 +80,13 @@ window.cipher = {
             cadenaDescifrada+= nuevaLetra;
           }else{
             //validacion para que aplique la formula correspondiente a letras minúsculas de abecedario
-            let palabraAscii=(string.charCodeAt(i)+97+offset)%26+97;
+            let palabraAscii=string.charCodeAt(i)-(offset%26);
+              //validacion para que cuando la letra a minúscula se recorra hacia la izquierda
+              //es decir valor ascii menor a letra a minúscula en ascii se regrese a z minúscula
+              if(palabraAscii<97){
+                palabraAscii=string.charCodeAt(i)+(26-(offset%26));
+              }
+
             let nuevaLetra =String.fromCharCode(palabraAscii);
             cadenaDescifrada+= nuevaLetra;
         
@@ -91,7 +97,7 @@ window.cipher = {
       }
        
     }
-    console.log(cadenaDescifrada);
+    console.log('La palabra Descifrada es: '+cadenaDescifrada);
     return cadenaDescifrada;
 
   }//finaliza funcion decode

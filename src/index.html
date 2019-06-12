@@ -10,27 +10,20 @@
   <body>
     <!--Aqui el encabezado de la página-->
     <header id="header">
-      <h1>°E S T A C I O N A U T O°</h1>
+      <h1>°E s t a c i o n A u t o Cipher°</h1>
     </header>
 
     <!--Aqui inicia la pantallaHome-->
     <section id="pantallaInicio">
       <div id="root">
-        <!--Imagen de la página principal-->
-        <img id="imgPortada" 
-        src="https://cdn.pixabay.com/photo/2017/06/04/20/15/seat-2372102_960_720.jpg" 
-        alt="estacionAuto">
-      </div>
-
       <!--Mostrando los botones de opciones-->
       <div>
-        <br>
-        Elige una opcion:
-        <br>
+        <p id="elige">
+        Elige una opción:
+        </p>
         <input type="button" id="botonIngresarData" value="Ingresar Registro de Auto">
         <input type="button" id="botonDescifrarData" value="Descifrar Registro">     
       </div>
-      <br><br>
     </section>
 
 
@@ -38,39 +31,35 @@
 
     <!--Aqui la pantalla 2: cuando se seleccionó el boton ingresar datos-->
     <section id="pantallaIngresar">
-      <p>Ingrese los datos del auto: </p>
-      <p>Hora en la que ingresó el auto: </p>
-      <input id="cajaHora"  type="number" name="numHora" placeholder="Hora Formato 24 hrs" min="0" max="23">
-      <input id="cajaMinuto"  type="number" name="numMinuto" placeholder="Minutos" min="0" max="59">
-      <br><br>
-      <p>Placas del auto: </p>
-      <input id="cajaPlacas"  type="text" name="textPlacas">
-      <br><br>
-      <p>Color de auto : </p>
-      <input id="cajaColor"  type="ext" name="textColor">
-      <br><br>
-      <p>Asegurese de haber ingresado los datos correctamente, confirme:</p>
-      <div id="valorPagHora"></div>   
-      <div id="valorPagPlacas"></div> 
-      <div id="valorPagColor"></div>
-      <br><br>
-      <p>Elige el número de desplazamientos para el cifrado: </p>
-      <input id="offsetInput" type="number" name="numberOffset" min="1">
-      <br><br>
-      <div id="valorPagDesplazamiento"></div>
-      <br><br>
+      <p id="datosAuto">Ingrese los datos del auto</p>
+      <div id=cajitasDatos>
+        <p>Hora en la que ingresó el auto:</p>
+        <input id="cajaHora"  type="number" name="numHora" placeholder="Hora Formato 24 hrs" min="0" max="23">
+        <input id="cajaMinuto"  type="number" name="numMinuto" placeholder="Minutos" min="0" max="59">
+        <p>Placas del auto</p>
+        <input id="cajaPlacas"  type="text" name="textPlacas">
+        <p>Color de auto : </p>
+        <input id="cajaColor"  type="ext" name="textColor">
+      </div>
+      <div id="confirmarDatos">
+        <p>Asegurese de haber ingresado los datos correctamente, confirme:</p>
+        <div id="valorPagHora"></div>   
+        <div id="valorPagPlacas"></div> 
+        <div id="valorPagColor"></div>
+        <p>Elige el número de desplazamientos para el cifrado: </p>
+        <input id="offsetInput" type="number" name="numberOffset" min="1">
+        <div id="valorPagDesplazamiento"></div>
+      </div>
       <input type="button" id="cifrar" value="Cifrar">
       <input type="button" id="regresarHome" value="Regresar a Inicio">
+      
     </section>
     
     
     <!--Aqui la pantalla 3: Resultado del boton cifrar-->
     <div id="pantallaCifrar">
       <img id="imgPantallaCifrado" 
-      src="https://cdn.pixabay.com/photo/2012/04/24/11/38/traffic-39507_960_720.png" alt="img2">
-      <br>
-           
-
+      src="https://image.flaticon.com/icons/svg/709/709019.svg" alt="img2">
       <div id="mensajePagCifrado">
         <br><br>
       </div>
@@ -83,25 +72,27 @@
 
     <!--Aqui la pantalla 4: cuando se seleccionó el botón descifrar datos-->
     <div id="pantallaIngresarMsg">
-      <p>Ingresar código:</p>
-      <input id="cajaMsgDescifrado" type="text" name="textMsg" >
-      <br>
-      <p>Asegurese de haber ingresado el código correctamente, confirme:</p>
-      <br>
-      <div id="valorPagMsg"></div>
-      <p>Selecciona la clave para descifrar: </p>
-      <input id="offsetDecode" type="number" name="numberOffsetDecode" min="1">
-      <br><br>
-      <div id="valorPagDesplazamientoDecode"></div>      
-      <input id="descifrar" type="button"  value="Descifrar">
-      <input id="regresarHome3" type="button" value="Regresar a Inicio">
+        <img id="imgIrDescifrar" 
+        src="https://www.redeszone.net/app/uploads/2017/02/Herramientas-descifrado-ransomwares.jpg?x=634&y=309" 
+        alt="img3">
+        <p>Ingresar código:</p>
+        <input id="cajaMsgDescifrado" type="text" name="textMsg" >
+        <div id="confirmarMsg">
+          <p>Asegurese de haber ingresado el código correctamente, confirme:</p>
+          <div id="valorPagMsg"></div>
+          <p>Selecciona la clave para descifrar: </p>
+          <input id="offsetDecode" type="number" name="numberOffsetDecode" min="1">
+          <div id="valorPagDesplazamientoDecode"></div>
+        </div>     
+        <input id="descifrar" type="button"  value="Descifrar">
+        <input id="regresarHome3" type="button" value="Regresar a Inicio">
     </div>
 
 
     <!--Aqui pantalla 5 cuando se seleccionó el boton de descifrar-->
     <div id="pantallaDescifrar">
         <img id="imgPantallaDescifrado" 
-        src="https://cdn.pixabay.com/photo/2010/11/28/pay-here-241__340.jpg" alt="img3">
+        src="https://cdn.pixabay.com/photo/2010/11/28/pay-here-241__340.jpg" alt="img4">
         <br>       
 
 
