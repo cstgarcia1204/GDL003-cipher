@@ -1,7 +1,34 @@
-# Cifrado César
+# EstaciónAuto Cipher
+Introducción:
 
-Cifrar significa codificar. El [cifrado César](https://en.wikipedia.org/wiki/Caesar_cipher)
-es uno de los primeros métodos de cifrado conocidos. El emperador romano Julio
+	¡¡¡Bienvenid@ a EstacionAuto Cipher!!!
+
+La aplicación está basada en el cifrado César, el cual es un tipo de cifrado por sustitución, en donde cada letra del texto original es reemplazada por otra que se encuentra un número de desplazamiento en el mismo alfabeto y diseñada para usarse en un estacionamiento de autos común y corriente.
+
+La aplicación funciona ingresando los siguientes datos: 
+
+La hora que ingresó el automóvil al estacionamiento, 
+
+la matricula de las placas y, 
+
+
+el color del auto.
+
+
+Estos datos serán cifrados dependiendo el número de desplazamientos que selecciones.
+
+Después de ingresar los datos solicitados, se puede usar el botón "Cifrar".
+La otra modalidad es que EstacionAuto Cipher permite "Descifrar" los mensajes que se tengan ya encriptados, siempre y cuando de igual manera como en el cifrado, se ingrese el número de desplazamientos para el cifrado.
+
+
+
+
+
+//Cifrar significa codificar. El [cifrado César](https://en.wikipedia.org/wiki/Caesar_cipher)
+es uno de los primeros es
+un tipo de cifrado por sustitución, es decir que cada letra del texto original
+es reemplazada por otra que se encuentra un número fijo de posiciones
+(desplazamiento) más adelante en el mismo alfabeto.métodos de cifrado conocidos. El emperador romano Julio
 César lo usaba para enviar órdenes secretas a sus generales en los campos de
 batalla.
 
@@ -122,6 +149,23 @@ Si **terminaste** con todo lo anterior y te queda tiempo, intenta completarlas. 
 y/o ejercitar más sobre los objetivos de aprendizaje del proyecto.
 
 La descripción general de este proyecto no menciona qué pasaría con las letras
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 minúsculas y otros caracteres (como espacios, puntuación, ñ, ...). El
 boilerplate incluye algunos tests (comentados en principio) que puedes usar como
 punto de partida para implementar el soporte para estos casos.
