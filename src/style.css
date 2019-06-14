@@ -117,9 +117,6 @@ h1{
 }
 
 
-#confirmarDatos{
-    color: #DF0101;
-}
 
 #cifrar{
     background-color: #FF8000;
@@ -151,14 +148,14 @@ h1{
     column-count:2;
 }
 #mensajePagCifrado{
-    color: #DF0101;
+
+    font-size:35px;
+    background-color: #FF8000;
+
 }
 
 #pantallaIngresarMsg{
     column-count:2;
-}
-#confirmarMsg{
-    color: #DF0101;
 }
 
 #pantallaDescifrar{ 
@@ -166,7 +163,8 @@ h1{
 
 }
 #mensajePagDescifrado{
-    color: #DF0101;
+    font-size:35px;
+    background-color: #FF8000;
 
 }
 #descifrar{
@@ -180,8 +178,8 @@ h1{
     display:block;
     font-size: 15px;
     position: absolute;
-    left: 300px;
-    bottom: 80px;
+    right: 300px;
+    top: 500px;
 }
 #regresarHome3{
     background-color: #FF8000;
@@ -194,7 +192,7 @@ h1{
     display:block;
     font-size: 15px;
     position: absolute;
-    right: 100px;
+    left: 300px;
     top: 500px;
 }
 
@@ -214,5 +212,4 @@ h1{
     position: absolute;
     left: 500px;
     top: 500px;
-
 }

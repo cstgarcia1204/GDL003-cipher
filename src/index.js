@@ -19,7 +19,7 @@ document.getElementById('botonIngresarData').addEventListener('click',irAingresa
 const guardarHora=()=>{
     let cajaHora=document.getElementById('cajaHora').value;
     let cajaMinuto=document.getElementById('cajaMinuto').value;
-    document.getElementById('valorPagHora').innerHTML= cajaHora+':'+cajaMinuto+' horas';    
+    document.getElementById('valorPagHora').value= cajaHora+':'+cajaMinuto+' horas';    
 };
 document.getElementById('cajaHora').addEventListener('click',guardarHora);
 document.getElementById('cajaMinuto').addEventListener('click',guardarHora);
@@ -27,7 +27,7 @@ document.getElementById('cajaMinuto').addEventListener('click',guardarHora);
 //funcion para guardar placas
 const guardarPlacas= ()=>{
     let palabraIngresada= document.getElementById('cajaPlacas').value;
-    document.getElementById('valorPagPlacas').innerHTML='Placas: '+palabraIngresada;    
+    document.getElementById('valorPagPlacas').value='Placas: '+palabraIngresada;    
 };
 document.getElementById('cajaPlacas').addEventListener('keyup',guardarPlacas);
 
@@ -35,7 +35,7 @@ document.getElementById('cajaPlacas').addEventListener('keyup',guardarPlacas);
 //funcion para guardar color
 const guardarColor= ()=>{
     let palabraIngresada= document.getElementById('cajaColor').value;
-    document.getElementById("valorPagColor").innerHTML='Color: '+palabraIngresada;
+    document.getElementById("valorPagColor").value='Color: '+palabraIngresada;
 };
 document.getElementById('cajaColor').addEventListener('keyup',guardarColor);
 
@@ -61,7 +61,7 @@ const irCifrar= () =>{
     let minuto=document.getElementById('cajaMinuto').value;
     let placas=document.getElementById('cajaPlacas').value;
     let color= document.getElementById('cajaColor').value;
-    let palabraIngresada=hora+':'+minuto+placas+color;
+    let palabraIngresada=hora+':'+minuto+' '+placas+' '+color;
     console.log(palabraIngresada);
     const miOffset=parseInt(document.getElementById('offsetInput').value);
     console.log(miOffset);
@@ -81,6 +81,7 @@ const regresarHome= ()=>{
     document.getElementById('pantallaDescifrar').style.display='none';
     document.getElementById('pantallaCifrar').style.display='none';
     document.getElementById('pantallaIngresarMsg').style.display='none';
+    location.reload(true);
 };
 document.getElementById('regresarHome').addEventListener('click',regresarHome);
 document.getElementById('regresarHome2').addEventListener('click',regresarHome);
