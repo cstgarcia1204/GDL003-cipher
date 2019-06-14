@@ -2,15 +2,6 @@
 
 	¡¡¡Bienvenid@ a EstacionAuto Cipher!!! 🅿
 
-
-
-
-
-  ___    _           _            _       _       
- | __|__| |_ __ _ __(_)___ _ _   /_\ _  _| |_ ___ 
- | _|(_-<  _/ _` / _| / _ \ ' \ / _ \ || |  _/ _ \
- |___/__/\__\__,_\__|_\___/_||_/_/ \_\_,_|\__\___/
-                                                  
 -----------------------------
 La appweb está basada en el cifrado César, el cual es un tipo de cifrado por sustitución, que necesita un mensaje y número de desplazamiento para poder encriptar. 
 ## **Esta aplicación ha sido diseñada para usarse en un estacionamiento de autos.**
