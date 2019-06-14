@@ -1,6 +1,4 @@
-# EstacionAuto Cipher
-
-#	¡¡¡Bienvenid@ a EstacionAuto Cipher!!! 🅿
+![welcome](https://i.ibb.co/RjxDmJ5/welcome.png)
 
 -----------------------------
 La appWeb está basada en el cifrado César, el cual es un tipo de cifrado por sustitución, que necesita un mensaje y un número de desplazamiento para poder encriptar. 
@@ -20,7 +18,7 @@ La otra modalidad es que EstacionAuto Cipher permite *"Descifrar"* el mensaje qu
 
 
 # **Cómo usar EstacionAuto: paso a paso.** 
-#### **Aquí si hay lugar joven!! 🅿🚘🚗🚘🚗🚘🚗**
+**Aquí si hay lugar joven!! 🅿🚘🚗🚘🚗🚘🚗**
 
 >Inicio:
 
